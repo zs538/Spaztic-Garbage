@@ -8,5 +8,9 @@ func _process(delta: float) -> void:
 	if position.x <= -1:
 		var enemyType = spawn.enemyValue(true)
 		var enemyPosition = spawn.enemyValue(false)
+		print("-----")
+		print(enemyType)
+		print(enemyPosition)
 		spawn.spawnEnemy(enemyType, enemyPosition)
+		patterns.nextEnemy()
 		queue_free()
