@@ -6,7 +6,7 @@ var index = 0
 
 var patterns = [
 		[
-			[1,0],
+			[1,0.5],
 			[0,0.5],
 			[0,-0.5]
 		]
@@ -15,17 +15,20 @@ var patterns = [
 func returnPattern():
 	return patterns.pick_random()
 
-func flipPattern(patternToFlip):
-	var flippedPattern = []
-	for enemyData in patternToFlip:
-		var typeToAppend = enemyData[1]
+func mirrorPattern(patternToMirror):
+	var patternMirrored = []
+	for enemyData in patternToMirror:
+		var typeToAppend = enemyData[0]
 		var positionToAppend = 0
 		match enemyData[1]:
-			0.5: pass
+			0.5: positionToAppend = -0.5
+			-0.5: positionToAppend = 0.5
+		patternMirrored.append([typeToAppend,positionToAppend])
+	return patternMirrored
 
 func selectPattern():
 	index = 0
-	currentPattern = returnPattern()
+	currentPattern = mirrorPattern(returnPattern())
 	patternSelected = true
 
 func getCurrentEnemy():
