@@ -28,7 +28,11 @@ func mirrorPattern(patternToMirror):
 
 func selectPattern():
 	index = 0
-	currentPattern = mirrorPattern(returnPattern())
+	var rnd = [false, true]
+	if rnd.pick_random():
+		currentPattern = returnPattern()
+	else:
+		currentPattern = mirrorPattern(returnPattern())
 	patternSelected = true
 
 func getCurrentEnemy():
