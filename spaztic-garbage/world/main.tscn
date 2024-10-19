@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://b3f227knlum46"]
+[gd_scene load_steps=7 format=3 uid="uid://b3f227knlum46"]
 
 [ext_resource type="PackedScene" uid="uid://cg308qpg3hh21" path="res://world/floor.tscn" id="1_8o2l0"]
 [ext_resource type="PackedScene" uid="uid://c38guxycmkjfd" path="res://world/player.tscn" id="2_q2rjj"]
 [ext_resource type="PackedScene" uid="uid://x15bu18483cq" path="res://world/enemy-dir/enemy.tscn" id="3_do2qm"]
-[ext_resource type="PackedScene" uid="uid://dj1myc4gc7jd1" path="res://menu-ui/in_game_ui.tscn" id="4_bjegk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gf15s"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -35,6 +34,3 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.048
 
 [node name="enemy" parent="." instance=ExtResource("3_do2qm")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10, 0, 0.5)
-
-[node name="inGameUI" parent="." instance=ExtResource("4_bjegk")]
-position = Vector2(18, 19)
