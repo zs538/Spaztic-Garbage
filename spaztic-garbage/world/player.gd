@@ -24,7 +24,10 @@ func _process(delta: float) -> void:
 	position.z = lerpf(position.z, playerPosittions[currPlayerPosIndex], delta*20)
 	
 	if damageSensor.is_colliding():
-		worldValues.getDamaged()
-		
+		if worldValues.playerDashing:
+			pass
+		else:
+			worldValues.getDamaged()
+	
 	#if worldValues.playerLife == 0:
 		#get_tree().reload_current_scene()

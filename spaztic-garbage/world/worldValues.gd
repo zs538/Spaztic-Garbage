@@ -4,6 +4,7 @@ extends Node
 var playerLife = 3
 var playerDashing = false
 var playerInvincible = false
+var playerScore = 0
 
 func dash():
 	playerDashing = true
@@ -19,3 +20,6 @@ func getDamaged():
 		playerLife -= 1
 		await get_tree().create_timer(0.2).timeout
 		playerInvincible = false
+
+func addScore(points):
+	playerScore += points

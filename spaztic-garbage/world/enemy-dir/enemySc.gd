@@ -8,6 +8,7 @@ func _process(delta: float) -> void:
 		position.x -= speed*delta*3
 	else:
 		position.x -= speed*delta
+	
 	if position.x <= -1:
 		var enemyType = spawn.enemyValue(true)
 		var enemyPosition = spawn.enemyValue(false)
