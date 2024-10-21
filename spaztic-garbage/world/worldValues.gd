@@ -20,6 +20,9 @@ func getDamaged():
 		playerLife -= 1
 		await get_tree().create_timer(0.2).timeout
 		playerInvincible = false
+		
+#func enemyGetDamaged(collidingEnemy):
+	#collidingEnemy.queue_free()
 
 func addScore(points):
 	playerScore += points

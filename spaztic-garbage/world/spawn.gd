@@ -4,7 +4,8 @@ extends Node3D
 
 func _ready() -> void:
 	enemies.append(preload("res://world/enemy-dir/enemy.tscn"))
-	enemies.append(preload("res://world/enemy-dir/enemy_kamarad_1.tscn"))
+	enemies.append(preload("res://world/enemy-dir/enemy_hexsaw.tscn"))
+	enemies.append(preload("res://world/enemy-dir/enemy_01_tard.tscn"))
 
 func spawnEnemy(type, enemyPositionZ) -> void:
 	var enemyToSpawn = enemies[type].instantiate()

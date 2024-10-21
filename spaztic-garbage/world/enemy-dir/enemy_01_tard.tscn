@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=3 uid="uid://jij5tv1wxskt"]
+
+[ext_resource type="PackedScene" uid="uid://bw0hosjepc856" path="res://world/enemy-dir/enemy_else.tscn" id="1_afdsg"]
+[ext_resource type="Script" path="res://world/enemy-dir/enemy_01_tardSc.gd" id="2_211ot"]
+[ext_resource type="Texture2D" uid="uid://diq4xql8c8vow" path="res://addons/kenney_prototype_textures/green/texture_01.png" id="3_oc258"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jqrym"]
+albedo_texture = ExtResource("3_oc258")
+
+[node name="enemy01-tard" instance=ExtResource("1_afdsg")]
+script = ExtResource("2_211ot")
+
+[node name="MeshInstance3D" parent="StaticBody3D" index="0"]
+material_override = SubResource("StandardMaterial3D_jqrym")

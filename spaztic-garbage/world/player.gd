@@ -7,7 +7,7 @@ var dashCharged = true
 @onready var damageSensor = $CharacterBody3D/damageSensor
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("left"):
 		if currPlayerPosIndex > 0:
 			currPlayerPosIndex -= 1
@@ -25,7 +25,12 @@ func _process(delta: float) -> void:
 	
 	if damageSensor.is_colliding():
 		if worldValues.playerDashing:
-			pass
+			var collider = damageSensor.get_collider()
+			var colliderScript = collider.get_script()
+			colliderScript.enemyGetDamaged()
+			#damageSensor.get_collider().enemyGetDamaged()
+			
+			#worldValues.enemyGetDamaged(collider)
 		else:
 			worldValues.getDamaged()
 	
