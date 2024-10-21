@@ -20,6 +20,9 @@ func mirrorPattern(patternToMirror):
 	var patternMirrored = []
 	for enemyData in patternToMirror:
 		var typeToAppend = enemyData[0]
+		match typeToAppend:
+			3: typeToAppend = 4
+			4: typeToAppend = 3
 		var positionToAppend = 0
 		match enemyData[1]:
 			0.5: positionToAppend = -0.5
