@@ -1,10 +1,15 @@
 extends Node3D
 
+class_name player
+
 var playerPosittions = [-0.5, 0, 0.5]
 var currPlayerPosIndex = 1
 var dashCharged = true
 
 @onready var damageSensor = $CharacterBody3D/damageSensor
+
+func playerGetDamaged():
+	worldValues.getDamaged()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -28,6 +33,6 @@ func _process(delta: float) -> void:
 			damageSensor.get_collider().enemyGetDamaged()
 		else:
 			worldValues.getDamaged()
-	
+	#
 	#if worldValues.playerLife == 0:
 		#get_tree().reload_current_scene()
