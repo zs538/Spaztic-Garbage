@@ -4,12 +4,25 @@ var patternSelected = false
 var currentPattern = []
 var index = 0
 
+const SPACE = 0
+const HEXSAW = 1
+const TARD = 2
+const MEWTARDL = 3
+const MEWTARDR = 4
+const XIOTER = 5
+
+const R = 0.5
+const L = -0.5
+const M = 0
+
+
 var patterns = [
 		[
-			[2,0.5],
-			[1,0.5],
-			[3,0],
-			[4,0]
+			[TARD,M],
+			[XIOTER,R],
+			[MEWTARDL,M],
+			[HEXSAW, M],
+			[MEWTARDR, L]
 		]
 	]
 

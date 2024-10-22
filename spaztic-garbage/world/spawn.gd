@@ -8,6 +8,7 @@ func _ready() -> void:
 	enemies.append(preload("res://world/enemy-dir/enemies/enemy_01_tard/enemy_01_tard.tscn"))
 	enemies.append(preload("res://world/enemy-dir/enemies/enemy_02_mewtard/enemy_02L_mewtard.tscn"))
 	enemies.append(preload("res://world/enemy-dir/enemies/enemy_02_mewtard/enemy_02R_mewtard.tscn"))
+	enemies.append(preload("res://world/enemy-dir/enemies/enemy_03_xioetr/enemy_03_xioetr.tscn"))
 
 func spawnEnemy(type, enemyPositionZ) -> void:
 	var enemyToSpawn = enemies[type].instantiate()

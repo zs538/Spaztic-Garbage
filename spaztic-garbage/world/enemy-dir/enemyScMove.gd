@@ -1,5 +1,7 @@
 extends Node3D
 
+class_name EnemyMoveScript
+
 var speed = worldValues.worldSpeed
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

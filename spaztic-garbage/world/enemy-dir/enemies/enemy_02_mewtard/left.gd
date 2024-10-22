@@ -1,4 +1,4 @@
-extends "res://world/enemy-dir/enemyScMove.gd"
+extends EnemyMoveScript
 
 var movePos = position.z - 0.5
 # Called every frame. 'delta' is the elapsed time since the previous frame.

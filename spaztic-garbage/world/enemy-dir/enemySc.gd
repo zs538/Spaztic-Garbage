@@ -1,5 +1,7 @@
 extends Node3D
 
+class_name EnemySc
+
 var enemyHp = 0
 var points = 0
 
