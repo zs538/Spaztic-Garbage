@@ -36,9 +36,9 @@ func _physics_process(delta: float) -> void:
 			worldValues.getDamaged()
 			
 	if bulletSensor.is_colliding():
-		var collider = bulletSensor.get_collider() 
-		if collider.has_method("bulletDamage"):
-			collider.bulletDamage()
+		if bulletSensor != null:
+			if bulletSensor.get_collider().has_method("bulletDamage"):
+				bulletSensor.get_collider().bulletDamage()
 	
 	worldValues.addScore(1)
 	#

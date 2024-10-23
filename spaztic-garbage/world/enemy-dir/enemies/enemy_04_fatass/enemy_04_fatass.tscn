@@ -1,0 +1,18 @@
+[gd_scene load_steps=6 format=3 uid="uid://nhmexew0nmle"]
+
+[ext_resource type="PackedScene" uid="uid://x15bu18483cq" path="res://world/enemy-dir/enemy.tscn" id="1_3v53k"]
+[ext_resource type="Script" path="res://world/enemy-dir/enemies/enemy_04_fatass/enemy_04_fatass.gd" id="2_b34ne"]
+[ext_resource type="Script" path="res://world/enemy-dir/enemies/enemy_04_fatass/enemy_04_mvExtSc.gd" id="2_pgpia"]
+[ext_resource type="Texture2D" uid="uid://cs3h3efvefb5g" path="res://addons/kenney_prototype_textures/light/texture_01.png" id="3_k5rxr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cm6oo"]
+albedo_texture = ExtResource("3_k5rxr")
+
+[node name="enemy_04_fatass" instance=ExtResource("1_3v53k")]
+script = ExtResource("2_pgpia")
+
+[node name="StaticBody3D" parent="." index="0"]
+script = ExtResource("2_b34ne")
+
+[node name="MeshInstance3D" parent="StaticBody3D" index="0"]
+material_override = SubResource("StandardMaterial3D_cm6oo")

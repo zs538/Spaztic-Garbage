@@ -8,7 +8,7 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jo0ku"]
 albedo_texture = ExtResource("3_wrf3w")
 
-[node name="enemy_01_tard" instance=ExtResource("1_ltvpn")]
+[node name="enemy_02R_mewtard" instance=ExtResource("1_ltvpn")]
 script = ExtResource("2_f5s6j")
 
 [node name="StaticBody3D" parent="." index="0"]

@@ -11,6 +11,7 @@ const MEWTARDL = 3
 const MEWTARDR = 4
 const XIOTER = 5
 const BULLET = 6
+const FATASS = 7
 
 const R = 0.5
 const L = -0.5
@@ -20,8 +21,9 @@ const M = 0
 var patterns = [
 		[
 			[TARD,M],
+			[FATASS,L],
 			[XIOTER,R],
-			[MEWTARDL,M],
+			[FATASS,M],
 			[HEXSAW, M],
 			[MEWTARDR, L]
 		]
