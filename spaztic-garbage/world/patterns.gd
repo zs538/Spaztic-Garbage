@@ -10,6 +10,7 @@ const TARD = 2
 const MEWTARDL = 3
 const MEWTARDR = 4
 const XIOTER = 5
+const BULLET = 6
 
 const R = 0.5
 const L = -0.5

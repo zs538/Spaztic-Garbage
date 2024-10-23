@@ -9,10 +9,17 @@ func _ready() -> void:
 	enemies.append(preload("res://world/enemy-dir/enemies/enemy_02_mewtard/enemy_02L_mewtard.tscn"))
 	enemies.append(preload("res://world/enemy-dir/enemies/enemy_02_mewtard/enemy_02R_mewtard.tscn"))
 	enemies.append(preload("res://world/enemy-dir/enemies/enemy_03_xioetr/enemy_03_xioetr.tscn"))
+	enemies.append(preload("res://world/enemy-dir/enemies/enemy_03_xioetr/enemyBullet.tscn"))
 
-func spawnEnemy(type, enemyPositionZ) -> void:
+func enemyShoot(enemyPositionZ):
+	var bulletToSpawn = enemies[patterns.BULLET].instantiate()
+	bulletToSpawn.position.x = 6
+	bulletToSpawn.position.z = enemyPositionZ
+	add_child(bulletToSpawn)
+
+func spawnEnemy(type, enemyPositionZ, enemyPositionX = 15) -> void:
 	var enemyToSpawn = enemies[type].instantiate()
-	enemyToSpawn.position.x = 15
+	enemyToSpawn.position.x = enemyPositionX
 	enemyToSpawn.position.z = enemyPositionZ
 	add_child(enemyToSpawn)
 

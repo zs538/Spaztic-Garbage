@@ -7,12 +7,13 @@ var currPlayerPosIndex = 1
 var dashCharged = true
 
 @onready var damageSensor = $CharacterBody3D/damageSensor
+@onready var bulletSensor = $CharacterBody3D/bulletSensor
 
 func playerGetDamaged():
 	worldValues.getDamaged()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("left"):
 		if currPlayerPosIndex > 0:
 			currPlayerPosIndex -= 1
@@ -33,6 +34,13 @@ func _process(delta: float) -> void:
 			damageSensor.get_collider().enemyGetDamaged()
 		else:
 			worldValues.getDamaged()
+			
+	if bulletSensor.is_colliding():
+		var collider = bulletSensor.get_collider() 
+		if collider.has_method("bulletDamage"):
+			collider.bulletDamage()
+	
+	worldValues.addScore(1)
 	#
 	#if worldValues.playerLife == 0:
 		#get_tree().reload_current_scene()
