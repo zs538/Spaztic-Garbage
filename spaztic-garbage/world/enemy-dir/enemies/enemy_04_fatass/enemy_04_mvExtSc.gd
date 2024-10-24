@@ -12,7 +12,7 @@ func getPushed():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if !beingPushed:
-		super._process(delta)
+		super._physics_process(delta)
 	else:
 		var newPosX = position.x + 6
 		position.x = lerpf(position.x, newPosX, delta*10)

@@ -23,6 +23,7 @@ var patterns = [
 			[TARD,M],
 			[XIOTER,R],
 			[HEXSAW, M],
+			[SPACE, M],
 			[MEWTARDR, L]
 		]
 	]

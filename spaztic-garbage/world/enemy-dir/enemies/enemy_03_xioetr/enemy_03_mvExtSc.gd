@@ -8,8 +8,8 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	super._process(delta)
+func _physics_process(delta: float) -> void:
+	super._physics_process(delta)
 	if position.x <= 6 and !didShoot:
 		spawn.spawnEnemy(patterns.BULLET,enemyPositionZ,6)
 		didShoot = true

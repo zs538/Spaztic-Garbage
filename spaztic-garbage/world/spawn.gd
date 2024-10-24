@@ -3,7 +3,7 @@ extends Node3D
 @export var enemies: Array[PackedScene] = []
 
 func _ready() -> void:
-	enemies.append(preload("res://world/enemy-dir/enemy.tscn"))
+	enemies.append(preload("res://world/enemy-dir/enemies/enemy_00_Empty/enemy_00_empty.tscn"))
 	enemies.append(preload("res://world/enemy-dir/hexsaw.tscn"))
 	enemies.append(preload("res://world/enemy-dir/enemies/enemy_01_tard/enemy_01_tard.tscn"))
 	enemies.append(preload("res://world/enemy-dir/enemies/enemy_02_mewtard/enemy_02L_mewtard.tscn"))
@@ -18,7 +18,7 @@ func enemyShoot(enemyPositionZ):
 	bulletToSpawn.position.z = enemyPositionZ
 	add_child(bulletToSpawn)
 
-func spawnEnemy(type, enemyPositionZ, enemyPositionX = 15) -> void:
+func spawnEnemy(type, enemyPositionZ = 0, enemyPositionX = 15) -> void:
 	var enemyToSpawn = enemies[type].instantiate()
 	enemyToSpawn.position.x = enemyPositionX
 	enemyToSpawn.position.z = enemyPositionZ
