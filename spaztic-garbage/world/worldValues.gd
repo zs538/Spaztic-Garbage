@@ -8,11 +8,9 @@ var playerScore = 0
 
 func dash():
 	playerDashing = true
-	playerInvincible = true
 	await get_tree().create_timer(0.3).timeout
 	playerDashing = false
 	await get_tree().create_timer(0.1).timeout
-	playerInvincible = false
 
 func getDamaged():
 	if playerInvincible == false:

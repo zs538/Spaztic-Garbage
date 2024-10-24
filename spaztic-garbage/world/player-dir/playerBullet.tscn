@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://offteoyr4edf"]
+
+[ext_resource type="Script" path="res://world/player-dir/player_bulletMvSc.gd" id="1_dl76m"]
+[ext_resource type="Script" path="res://world/player-dir/player_bulletSc.gd" id="2_1e5bc"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_73q5r"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_78ghn"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[node name="enemy" type="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+script = ExtResource("1_dl76m")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+script = ExtResource("2_1e5bc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_73q5r")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_78ghn")
+
+[node name="enemySensor" type="RayCast3D" parent="StaticBody3D"]
+transform = Transform3D(-4.37114e-08, -0.3, -4.37114e-08, 1, -1.31134e-08, 4.37114e-08, -4.37114e-08, -1.31134e-08, 1, 0, 0, 0)

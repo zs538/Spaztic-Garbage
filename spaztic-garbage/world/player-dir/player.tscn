@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c38guxycmkjfd"]
 
-[ext_resource type="Script" path="res://world/player.gd" id="1_u5jos"]
+[ext_resource type="Script" path="res://world/player-dir/player.gd" id="1_u5jos"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ntj71"]
 size = Vector3(0.5, 1, 0.1)

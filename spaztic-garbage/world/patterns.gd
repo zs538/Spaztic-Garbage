@@ -21,9 +21,7 @@ const M = 0
 var patterns = [
 		[
 			[TARD,M],
-			[FATASS,L],
 			[XIOTER,R],
-			[FATASS,M],
 			[HEXSAW, M],
 			[MEWTARDR, L]
 		]

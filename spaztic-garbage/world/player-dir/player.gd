@@ -6,11 +6,22 @@ var playerPosittions = [-0.5, 0, 0.5]
 var currPlayerPosIndex = 1
 var dashCharged = true
 
+var holdsGun = false
+var gunCharged = true
+
 @onready var damageSensor = $CharacterBody3D/damageSensor
 @onready var bulletSensor = $CharacterBody3D/bulletSensor
 
+var playerBullet = preload("res://world/player-dir/playerBullet.tscn").instantiate()
+
 func playerGetDamaged():
 	worldValues.getDamaged()
+
+func shootGun():
+	var playerBulletNew = playerBullet
+	playerBulletNew.position.x = 0
+	playerBulletNew.position.z = playerPosittions[currPlayerPosIndex]
+	add_child(playerBullet)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -21,11 +32,25 @@ func _physics_process(delta: float) -> void:
 		if currPlayerPosIndex < 2:
 			currPlayerPosIndex += 1
 	if Input.is_action_just_pressed("attackAction"):
-		if dashCharged:
-			worldValues.dash()
-			dashCharged = false
-			await get_tree().create_timer(1.0).timeout
-			dashCharged = true
+		if !holdsGun:
+			if dashCharged:
+				worldValues.dash()
+				dashCharged = false
+				await get_tree().create_timer(1.0).timeout
+				dashCharged = true
+		else:
+			if gunCharged:
+				shootGun()
+				gunCharged = false
+				await get_tree().create_timer(1.0).timeout
+				gunCharged = true
+	
+	
+	if Input.is_action_just_pressed("switchWeapon"):
+		if !holdsGun:
+			holdsGun = true
+		else:
+			holdsGun = false
 	
 	position.z = lerpf(position.z, playerPosittions[currPlayerPosIndex], delta*20)
 	
@@ -36,7 +61,7 @@ func _physics_process(delta: float) -> void:
 			worldValues.getDamaged()
 			
 	if bulletSensor.is_colliding():
-		if bulletSensor != null:
+		if bulletSensor.get_collider() != null:
 			if bulletSensor.get_collider().has_method("bulletDamage"):
 				bulletSensor.get_collider().bulletDamage()
 	

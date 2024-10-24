@@ -12,8 +12,8 @@ func _process(delta: float) -> void:
 		position.x -= speed*delta
 	
 	if position.x <= -1:
-		var enemyType = spawn.enemyValue(true)
-		var enemyPosition = spawn.enemyValue(false)
-		spawn.spawnEnemy(enemyType, enemyPosition)
-		patterns.nextEnemy()
+		#var enemyType = spawn.enemyValue(true)
+		#var enemyPosition = spawn.enemyValue(false)
+		#spawn.spawnEnemy(enemyType, enemyPosition)
+		#patterns.nextEnemy()
 		queue_free()

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://0plmm05ogofg"]
+
+[ext_resource type="PackedScene" uid="uid://x15bu18483cq" path="res://world/enemy-dir/enemy.tscn" id="1_pq1q0"]
+[ext_resource type="Script" path="res://world/enemy-dir/enemies/enemy_00_Empty/emptySc.gd" id="2_uts4t"]
+
+[node name="enemy_00_Empty" instance=ExtResource("1_pq1q0")]
+
+[node name="StaticBody3D" parent="." index="0"]
+script = ExtResource("2_uts4t")

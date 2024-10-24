@@ -12,4 +12,4 @@ func enemyGetDamaged():
 func _process(delta: float) -> void:
 	if enemyHp < 1:
 		worldValues.addScore(points)
-		queue_free()
+		get_parent_node_3d().queue_free()
