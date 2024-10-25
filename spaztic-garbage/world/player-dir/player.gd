@@ -14,18 +14,12 @@ var canMove = true
 @onready var damageSensor = $CharacterBody3D/damageSensor
 @onready var bulletSensor = $CharacterBody3D/bulletSensor
 
-var playerBullet = preload("res://world/player-dir/playerBullet.tscn").instantiate()
+@export var stuff: Array[PackedScene] = []
 
 func playerGetDamaged():
 	worldValues.getDamaged()
 
-func shootGun():
-	var playerBulletNew = playerBullet
-	playerBulletNew.position.x = 0
-	playerBulletNew.position.z = playerPosittions[currPlayerPosIndex]
-	if playerBulletNew.get_parent() != null:
-		playerBulletNew.get_parent().remove_child(playerBulletNew)
-	add_child(playerBullet)
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -46,7 +40,7 @@ func _physics_process(delta: float) -> void:
 				dashCharged = true
 		else:
 			if gunCharged:
-				shootGun()
+				worldValues.shootGun(playerPosittions[currPlayerPosIndex])
 				gunCharged = false
 				await get_tree().create_timer(1.0).timeout
 				gunCharged = true

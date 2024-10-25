@@ -24,4 +24,4 @@ mesh = SubResource("BoxMesh_73q5r")
 shape = SubResource("BoxShape3D_78ghn")
 
 [node name="enemySensor" type="RayCast3D" parent="StaticBody3D"]
-transform = Transform3D(-4.37114e-08, -0.54, -4.37114e-08, 1, -2.36042e-08, 4.37114e-08, -4.37114e-08, -2.36042e-08, 1, 0, 0, 0)
+transform = Transform3D(4.37114e-08, 4.72084e-08, -1, 1, -2.36042e-08, 4.37114e-08, -4.37114e-08, -0.54, -8.74228e-08, 0, 0, 0)

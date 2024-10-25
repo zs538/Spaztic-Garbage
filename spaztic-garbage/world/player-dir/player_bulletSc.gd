@@ -7,3 +7,4 @@ func _physics_process(delta: float) -> void:
 	if enemySensor.is_colliding():
 		if enemySensor.get_collider().has_method("enemyGetDamaged"):
 			enemySensor.get_collider().enemyGetDamaged()
+			get_parent_node_3d().bulletDeath()
