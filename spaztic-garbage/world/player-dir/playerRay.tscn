@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://offteoyr4edf"]
+[gd_scene load_steps=5 format=3 uid="uid://dgcp5lnjgh3ef"]
 
-[ext_resource type="Script" path="res://world/player-dir/player_bulletMvSc.gd" id="1_dl76m"]
-[ext_resource type="Script" path="res://world/player-dir/player_bulletSc.gd" id="2_1e5bc"]
+[ext_resource type="Script" path="res://world/player-dir/player_bulletMvSc.gd" id="1_gd2vt"]
+[ext_resource type="Script" path="res://world/player-dir/player_bulletSc.gd" id="2_xvmat"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_73q5r"]
 size = Vector3(0.1, 0.1, 0.1)
@@ -11,11 +11,11 @@ size = Vector3(0.1, 0.1, 0.1)
 
 [node name="playerBullet" type="Node3D"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
-script = ExtResource("1_dl76m")
+script = ExtResource("1_gd2vt")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-script = ExtResource("2_1e5bc")
+script = ExtResource("2_xvmat")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
 mesh = SubResource("BoxMesh_73q5r")
@@ -24,4 +24,4 @@ mesh = SubResource("BoxMesh_73q5r")
 shape = SubResource("BoxShape3D_78ghn")
 
 [node name="enemySensor" type="RayCast3D" parent="StaticBody3D"]
-transform = Transform3D(4.36095e-08, 8.00671e-08, -0.997668, 0.997668, -4.00336e-08, 4.36095e-08, -4.36095e-08, -0.915859, -8.72189e-08, 0, 0, 0)
+transform = Transform3D(4.37114e-08, 7.79505e-07, -1, 1, -3.89753e-07, 4.37114e-08, -4.37114e-08, -8.91648, -8.74228e-08, 0, 0, 0)

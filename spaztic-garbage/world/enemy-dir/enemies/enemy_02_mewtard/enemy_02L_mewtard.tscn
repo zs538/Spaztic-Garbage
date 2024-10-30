@@ -2,11 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://x15bu18483cq" path="res://world/enemy-dir/enemy.tscn" id="1_ab14o"]
 [ext_resource type="Script" path="res://world/enemy-dir/enemies/enemy_02_mewtard/left.gd" id="2_4umap"]
-[ext_resource type="Texture2D" uid="uid://diq4xql8c8vow" path="res://addons/kenney_prototype_textures/green/texture_01.png" id="3_fl3sd"]
 [ext_resource type="Script" path="res://world/enemy-dir/enemies/enemy_02_mewtard/enemy_02_mewtardSc.gd" id="3_y023k"]
+[ext_resource type="Texture2D" uid="uid://bb3i8djm2h8ax" path="res://world/enemy-dir/enemies/enemy_02_mewtard/texture02.jpg" id="4_i03po"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jo0ku"]
-albedo_texture = ExtResource("3_fl3sd")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i01s0"]
+albedo_texture = ExtResource("4_i03po")
 
 [node name="enemy_02L_mewtard" instance=ExtResource("1_ab14o")]
 script = ExtResource("2_4umap")
@@ -15,4 +15,4 @@ script = ExtResource("2_4umap")
 script = ExtResource("3_y023k")
 
 [node name="MeshInstance3D" parent="StaticBody3D" index="0"]
-material_override = SubResource("StandardMaterial3D_jo0ku")
+material_override = SubResource("StandardMaterial3D_i01s0")

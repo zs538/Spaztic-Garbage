@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://b3f227knlum46"]
+[gd_scene load_steps=7 format=3 uid="uid://b3f227knlum46"]
 
 [ext_resource type="PackedScene" uid="uid://cg308qpg3hh21" path="res://world/floor.tscn" id="1_8o2l0"]
 [ext_resource type="Script" path="res://world/main.gd" id="1_b0cs7"]
 [ext_resource type="PackedScene" uid="uid://c38guxycmkjfd" path="res://world/player-dir/player.tscn" id="2_q2rjj"]
-[ext_resource type="PackedScene" uid="uid://0plmm05ogofg" path="res://world/enemy-dir/enemies/enemy_00_Empty/enemy_00_empty.tscn" id="3_lnoto"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gf15s"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -22,7 +21,7 @@ glow_enabled = true
 script = ExtResource("1_b0cs7")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+transform = Transform3D(0.948587, 0.185449, -0.256498, 0.250001, 0.0580118, 0.966506, 0.194117, -0.98094, 0.00866517, 0, 0, 0)
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -33,6 +32,3 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14.5, 
 
 [node name="player" parent="." instance=ExtResource("2_q2rjj")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.048877, 0, -0.067709)
-
-[node name="enemy_00_Empty" parent="." instance=ExtResource("3_lnoto")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 0, 0.5)

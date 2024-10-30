@@ -53,12 +53,13 @@ func _physics_process(delta: float) -> void:
 	position.z = lerpf(position.z, playerPosittions[currPlayerPosIndex], delta*20)
 	
 	if damageSensor.is_colliding():
-		if damageSensor.get_collider() != null:
-			if worldValues.playerDashing and damageSensor.get_collider().has_method("enemyGetDamaged"):
-				damageSensor.get_collider().enemyGetDamaged()
-		else:
+		if worldValues.playerDashing:
+			if damageSensor.get_collider() != null:
+				if damageSensor.get_collider().has_method("enemyGetDamaged"):
+					damageSensor.get_collider().enemyGetDamaged()
+		else: 
 			worldValues.getDamaged()
-			
+
 	if bulletSensor.is_colliding():
 		if bulletSensor.get_collider() != null:
 			if bulletSensor.get_collider().has_method("bulletDamage"):

@@ -3,10 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://x15bu18483cq" path="res://world/enemy-dir/enemy.tscn" id="1_0akgm"]
 [ext_resource type="Script" path="res://world/enemy-dir/enemies/enemy_03_xioetr/enemy_03_mvExtSc.gd" id="2_l7gui"]
 [ext_resource type="Script" path="res://world/enemy-dir/enemies/enemy_03_xioetr/enemy_03_xioetrSc.gd" id="2_tedpa"]
-[ext_resource type="Texture2D" uid="uid://dbh40i3gbm088" path="res://addons/kenney_prototype_textures/dark/texture_01.png" id="3_gtqj5"]
+[ext_resource type="Texture2D" uid="uid://bbrqqygcy6gy5" path="res://world/enemy-dir/enemies/enemy_03_xioetr/texture03.jpg" id="4_p18ip"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kvwx4"]
-albedo_texture = ExtResource("3_gtqj5")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p50e3"]
+albedo_texture = ExtResource("4_p18ip")
 
 [node name="enemy_03_xioetr" instance=ExtResource("1_0akgm")]
 script = ExtResource("2_l7gui")
@@ -15,4 +15,5 @@ script = ExtResource("2_l7gui")
 script = ExtResource("2_tedpa")
 
 [node name="MeshInstance3D" parent="StaticBody3D" index="0"]
-material_override = SubResource("StandardMaterial3D_kvwx4")
+transform = Transform3D(1.00305, 0, 0, 0, 1.00305, 0, 0, 0, 1.00305, 0, 0.5, 0)
+material_override = SubResource("StandardMaterial3D_p50e3")

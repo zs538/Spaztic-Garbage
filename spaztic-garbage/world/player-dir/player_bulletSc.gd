@@ -5,6 +5,7 @@ extends StaticBody3D
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	if enemySensor.is_colliding():
-		if enemySensor.get_collider().has_method("enemyGetDamaged"):
-			enemySensor.get_collider().enemyGetDamaged()
-			get_parent_node_3d().bulletDeath()
+		if enemySensor.get_collider() != null:
+			if enemySensor.get_collider().has_method("enemyGetDamaged"):
+				enemySensor.get_collider().enemyGetDamaged()
+				get_parent_node_3d().bulletDeath()
