@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://y5uupyf5s1v1"]
+
+[sub_resource type="GDScript" id="GDScript_jr61i"]
+script/source = "extends Node3D
+
+var speed = worldValues.worldSpeed
+
+@export var stuffArray: Array[PackedScene] = []
+
+func _ready() -> void:
+	stuffArray.append(preload(\"res://world/stuff/sub_garbage_1.tscn\"))
+	stuffArray.append(preload(\"res://world/stuff/sub_garbage_2.tscn\"))
+	stuffArray.append(preload(\"res://world/stuff/sub_garbage_3.tscn\"))
+	stuffArray.append(preload(\"res://world/stuff/sub_garbage_4.tscn\"))
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if worldValues.playerDashing:
+		position.x -= speed*delta*3
+	else:
+		position.x -= speed*delta
+	
+	if position.x <= -1:
+		var stuffToSpawn = stuffArray.pick_random().instantiate()
+		queue_free()
+"
+
+[node name="stuff" type="Node3D"]
+script = SubResource("GDScript_jr61i")
