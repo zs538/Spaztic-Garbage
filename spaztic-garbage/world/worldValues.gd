@@ -3,6 +3,7 @@ extends Node
 @export var worldSpeed = 7.0
 var playerLife = 3
 var playerDashing = false
+var playerSproking = false
 var playerInvincible = false
 var playerScore = 0
 
@@ -11,6 +12,14 @@ var enemyMewing = false
 @onready var playerBullet = preload("res://world/player-dir/playerBullet.tscn")
 @onready var playerRay = preload("res://world/player-dir/playerRay.tscn")
 
+func meds():
+	playerLife += 1
+
+func sproke():
+	playerSproking = true
+	await get_tree().create_timer(0.6).timeout
+	playerSproking = false
+	await get_tree().create_timer(0.1).timeout
 
 func dash():
 	playerDashing = true

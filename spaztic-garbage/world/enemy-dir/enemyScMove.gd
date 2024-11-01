@@ -8,6 +8,8 @@ var speed = worldValues.worldSpeed
 func _physics_process(delta: float) -> void:
 	if worldValues.playerDashing:
 		position.x -= speed*delta*3
+	else: if worldValues.playerSproking:
+		position.x -= speed*delta*2
 	else:
 		position.x -= speed*delta
 	

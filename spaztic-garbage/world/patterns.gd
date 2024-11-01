@@ -5,13 +5,15 @@ var currentPattern = []
 var index = 0
 
 const SPACE = 0
-const HEXSAW = 1
+const FIRE = 1
 const TARD = 2
 const MEWTARDL = 3
 const MEWTARDR = 4
 const XIOTER = 5
 const BULLET = 6
 const FATASS = 7
+const SPROKE = 8
+const MEDS = 9
 
 const R = 0.5
 const L = -0.5
@@ -21,8 +23,11 @@ const M = 0
 var patterns = [
 		[
 			[TARD,M],
+			[SPROKE,L],
+			[SPACE, M],
 			[XIOTER,R],
-			[HEXSAW, M],
+			[FIRE, M],
+			[MEDS,R],
 			[SPACE, M],
 			[MEWTARDR, L]
 		]

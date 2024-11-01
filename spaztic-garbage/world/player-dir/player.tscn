@@ -25,3 +25,6 @@ transform = Transform3D(0.994248, 0, 0, 0, -1.06477e-08, -0.994248, 0, 0.243591,
 
 [node name="bulletSensor" type="RayCast3D" parent="CharacterBody3D"]
 transform = Transform3D(0.834296, 0, 0, 0, -8.93472e-09, -0.834296, 0, 0.204403, -3.64682e-08, -0.00153327, 0.507537, 0.0013051)
+
+[node name="pickupSensor" type="RayCast3D" parent="CharacterBody3D"]
+transform = Transform3D(0.834296, 0, 0, 0, -1.74227e-08, -0.834296, 0, 0.398586, -3.64682e-08, -0.00153327, 1.25754, 0.0013051)

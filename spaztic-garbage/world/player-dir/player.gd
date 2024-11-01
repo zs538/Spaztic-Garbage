@@ -13,6 +13,7 @@ var canMove = true
 
 @onready var damageSensor = $CharacterBody3D/damageSensor
 @onready var bulletSensor = $CharacterBody3D/bulletSensor
+@onready var pickupSensor = $CharacterBody3D/pickupSensor
 
 @export var stuff: Array[PackedScene] = []
 
@@ -64,6 +65,11 @@ func _physics_process(delta: float) -> void:
 		if bulletSensor.get_collider() != null:
 			if bulletSensor.get_collider().has_method("bulletDamage"):
 				bulletSensor.get_collider().bulletDamage()
+				
+	if pickupSensor.is_colliding():
+		if pickupSensor.get_collider() != null:
+			if pickupSensor.get_collider().has_method("pickupGetDamaged"):
+				pickupSensor.get_collider().pickupGetDamaged()
 	
 	worldValues.addScore(1)
 	#

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyloxi5wgay7y"
-path.s3tc="res://.godot/imported/sprokeTexture.jpeg-f8aed94553544509e82995eb8d5783ef.s3tc.ctex"
+uid="uid://kluhx43yi3es"
+path.s3tc="res://.godot/imported/firetexture.jpg-78684a3094c162d38f203252c4b07abe.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://world/powerup/sprokeTexture.jpeg"
-dest_files=["res://.godot/imported/sprokeTexture.jpeg-f8aed94553544509e82995eb8d5783ef.s3tc.ctex"]
+source_file="res://world/enemy-dir/firetexture.jpg"
+dest_files=["res://.godot/imported/firetexture.jpg-78684a3094c162d38f203252c4b07abe.s3tc.ctex"]
 
 [params]
 
