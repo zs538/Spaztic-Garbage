@@ -16,26 +16,26 @@ func _ready() -> void:
 	#powerups
 	enemies.append(preload("res://world/powerup/sproke.tscn"))
 	enemies.append(preload("res://world/powerup/meds.tscn"))
-
-func enemyShoot(enemyPositionZ):
-	var bulletToSpawn = enemies[patterns.BULLET].instantiate()
-	bulletToSpawn.position.x = 6
-	bulletToSpawn.position.z = enemyPositionZ
-	add_child(bulletToSpawn)
-
-func spawnEnemy(type, enemyPositionZ = 0, enemyPositionX = 15) -> void:
-	var enemyToSpawn = enemies[type].instantiate()
-	enemyToSpawn.position.x = enemyPositionX
-	enemyToSpawn.position.z = enemyPositionZ
-	add_child(enemyToSpawn)
-
-func enemyValue(infoType):
-	if patterns.patternSelected == false:
-		patterns.selectPattern()
-
-	var currentEnemy = patterns.getCurrentEnemy()
-
-	if infoType:
-		return currentEnemy[0]
-	else:
-		return currentEnemy[1]
+#
+#func enemyShoot(enemyPositionZ):
+	#var bulletToSpawn = enemies[patterns.BULLET].instantiate()
+	#bulletToSpawn.position.x = 6
+	#bulletToSpawn.position.z = enemyPositionZ
+	#add_child(bulletToSpawn)
+#
+#func spawnEnemy(type, enemyPositionZ = 0, enemyPositionX = 15) -> void:
+	#var enemyToSpawn = enemies[type].instantiate()
+	#enemyToSpawn.position.x = enemyPositionX
+	#enemyToSpawn.position.z = enemyPositionZ
+	#add_child(enemyToSpawn)
+#
+#func enemyValue(infoType):
+	#if patterns.patternSelected == false:
+		#patterns.selectPattern()
+#
+	#var currentEnemy = patterns.getCurrentEnemy()
+#
+	#if infoType:
+		#return currentEnemy[0]
+	#else:
+		#return currentEnemy[1]

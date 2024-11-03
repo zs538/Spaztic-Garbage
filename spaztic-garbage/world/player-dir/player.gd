@@ -20,8 +20,6 @@ var canMove = true
 func playerGetDamaged():
 	worldValues.getDamaged()
 
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("left"):
@@ -72,6 +70,3 @@ func _physics_process(delta: float) -> void:
 				pickupSensor.get_collider().pickupGetDamaged()
 	
 	worldValues.addScore(1)
-	#
-	#if worldValues.playerLife == 0:
-		#get_tree().reload_current_scene()

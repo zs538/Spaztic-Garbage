@@ -65,3 +65,6 @@ func _process(delta: float) -> void:
 	if speedPoints >= 1000:
 		worldSpeed += 0.2
 		speedPoints = 0
+	
+	if Input.is_action_just_pressed("reload"):
+		get_tree().change_scene_to_file("res://world/main.tscn")

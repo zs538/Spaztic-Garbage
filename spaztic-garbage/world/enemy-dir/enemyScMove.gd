@@ -4,6 +4,9 @@ class_name EnemyMoveScript
 
 var speed = worldValues.worldSpeed
 
+func reload():
+	queue_free()
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	if worldValues.playerDashing:
@@ -14,8 +17,4 @@ func _physics_process(delta: float) -> void:
 		position.x -= speed*delta
 	
 	if position.x <= -1:
-		#var enemyType = spawn.enemyValue(true)
-		#var enemyPosition = spawn.enemyValue(false)
-		#spawn.spawnEnemy(enemyType, enemyPosition)
-		#patterns.nextEnemy()
 		queue_free()

@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://dx36axs4f6l8p"]
+
+[ext_resource type="Script" path="res://menu/menu.gd" id="1_bsmd5"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bsmd5")
+
+[node name="escape" type="Button" parent="."]
+layout_mode = 2
+offset_left = 48.0
+offset_top = 612.0
+offset_right = 110.0
+offset_bottom = 643.0
+scale = Vector2(0.439999, 0.560001)
+text = "escape"
+
+[node name="enter" type="Button" parent="."]
+layout_mode = 2
+offset_left = 533.0
+offset_top = 299.0
+offset_right = 595.0
+offset_bottom = 330.0
+scale = Vector2(8.28, 6.78361)
+text = "enter"
+
+[connection signal="pressed" from="escape" to="." method="_on_escape_pressed"]
+[connection signal="pressed" from="enter" to="." method="_on_enter_pressed"]
