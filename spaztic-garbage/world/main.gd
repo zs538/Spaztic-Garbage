@@ -31,6 +31,8 @@ var spawnDelay = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	worldValues.playerLife = 3
+	worldValues.worldSpeed = 7.0
+	worldValues.playerScore = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -44,6 +46,6 @@ func _process(delta: float) -> void:
 		patterns.nextEnemy()
 		await get_tree().create_timer(spawnDelay).timeout
 		shouldSpawn = true
-	
+		
 	if worldValues.playerLife <= 0:
-		get_tree().change_scene_to_file("res://world/main.tscn")
+		worldValues.death()

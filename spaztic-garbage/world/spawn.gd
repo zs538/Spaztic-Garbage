@@ -17,11 +17,11 @@ func _ready() -> void:
 	enemies.append(preload("res://world/powerup/sproke.tscn"))
 	enemies.append(preload("res://world/powerup/meds.tscn"))
 #
-#func enemyShoot(enemyPositionZ):
-	#var bulletToSpawn = enemies[patterns.BULLET].instantiate()
-	#bulletToSpawn.position.x = 6
-	#bulletToSpawn.position.z = enemyPositionZ
-	#add_child(bulletToSpawn)
+func enemyShoot(enemyPositionZ):
+	var bulletToSpawn = enemies[patterns.BULLET].instantiate()
+	bulletToSpawn.position.x = 6
+	bulletToSpawn.position.z = enemyPositionZ
+	add_child(bulletToSpawn)
 #
 #func spawnEnemy(type, enemyPositionZ = 0, enemyPositionX = 15) -> void:
 	#var enemyToSpawn = enemies[type].instantiate()

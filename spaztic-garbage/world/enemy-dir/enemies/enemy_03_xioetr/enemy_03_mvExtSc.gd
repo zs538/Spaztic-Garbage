@@ -1,6 +1,7 @@
 extends EnemyMoveScript
 
 @onready var enemyPositionZ = position.z
+@onready var mainScene = main.new()
 var didShoot = false
 
 func enemyShoot(enemyPositionZ):
@@ -17,5 +18,5 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	super._physics_process(delta)
 	if position.x <= 6 and !didShoot:
-		enemyShoot(enemyPositionZ)
+		spawn.enemyShoot(enemyPositionZ)
 		didShoot = true

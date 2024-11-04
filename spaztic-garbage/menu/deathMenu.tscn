@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://i4g1b1w0s8cy"]
+
+[ext_resource type="Script" path="res://menu/death_menu.gd" id="1_87ymx"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_87ymx")
+
+[node name="back" type="Button" parent="."]
+layout_mode = 2
+offset_left = 616.0
+offset_top = 624.0
+offset_right = 684.0
+offset_bottom = 655.0
+scale = Vector2(0.439999, 0.560001)
+text = "go back"
+
+[node name="restard" type="Button" parent="."]
+layout_mode = 2
+offset_left = 243.0
+offset_top = -83.0
+offset_right = 367.0
+offset_bottom = -52.0
+scale = Vector2(8.28, 6.78361)
+text = "restardzfgdghs"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 294.0
+offset_top = 289.0
+offset_right = 317.0
+offset_bottom = 312.0
+scale = Vector2(1.6, 4.24)
+text = "score:"
+
+[connection signal="pressed" from="back" to="." method="_on_escape_pressed"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="restard" to="." method="_on_enter_pressed"]
+[connection signal="pressed" from="restard" to="." method="_on_restard_pressed"]

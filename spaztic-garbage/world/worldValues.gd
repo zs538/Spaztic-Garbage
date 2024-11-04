@@ -12,6 +12,10 @@ var enemyMewing = false
 @onready var playerBullet = preload("res://world/player-dir/playerBullet.tscn")
 @onready var playerRay = preload("res://world/player-dir/playerRay.tscn")
 
+func death():
+	
+	get_tree().change_scene_to_file("res://menu/deathMenu.tscn")
+
 func meds():
 	playerLife += 1
 
