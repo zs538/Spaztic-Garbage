@@ -1,7 +1,39 @@
-[gd_scene load_steps=3 format=3 uid="uid://i4g1b1w0s8cy"]
+[gd_scene load_steps=10 format=3 uid="uid://i4g1b1w0s8cy"]
 
 [ext_resource type="Script" path="res://menu/death_menu.gd" id="1_87ymx"]
 [ext_resource type="PackedScene" uid="uid://dfq8nhptebyeh" path="res://menu/score.tscn" id="2_kco44"]
+[ext_resource type="Texture2D" uid="uid://ba0n7mrk858p4" path="res://menu/icon.png" id="3_8q8fe"]
+[ext_resource type="Texture2D" uid="uid://dai48kyescdem" path="res://menu/deathmenu.jpeg" id="3_ew1ps"]
+
+[sub_resource type="Theme" id="Theme_2uojh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dmtex"]
+texture = ExtResource("3_ew1ps")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g2f05"]
+bg_color = Color(1, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 17
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kl0hc"]
+bg_color = Color(0, 0.670588, 0.780392, 0.258824)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="LabelSettings" id="LabelSettings_pd3yn"]
+outline_size = 2
+outline_color = Color(1, 0, 1, 1)
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -11,6 +43,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_87ymx")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 600.0
+offset_bottom = 650.0
+texture = ExtResource("3_ew1ps")
 
 [node name="back" type="Button" parent="."]
 layout_mode = 2
@@ -23,28 +61,34 @@ text = "go back"
 
 [node name="restard" type="Button" parent="."]
 layout_mode = 2
-offset_left = -2.99998
-offset_top = 54.0
-offset_right = 121.0
-offset_bottom = 85.0
+offset_left = 38.0
+offset_top = -7.0
+offset_right = 261.0
+offset_bottom = 27.0
 scale = Vector2(4.4, 6.78361)
+theme = SubResource("Theme_2uojh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dmtex")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_g2f05")
+theme_override_styles/normal = SubResource("StyleBoxFlat_kl0hc")
 text = "restardzfgdghsghfghgfh"
+icon = ExtResource("3_8q8fe")
 
 [node name="hscore" type="Label" parent="."]
 layout_mode = 0
-offset_left = 218.0
-offset_top = 184.0
-offset_right = 302.0
-offset_bottom = 207.0
-scale = Vector2(1, 7.92)
+offset_left = 251.0
+offset_top = 162.0
+offset_right = 335.0
+offset_bottom = 185.0
+scale = Vector2(1.6, 7.92)
 text = "high score:"
+label_settings = SubResource("LabelSettings_pd3yn")
 
 [node name="score" parent="." instance=ExtResource("2_kco44")]
 layout_mode = 1
-offset_left = 158.0
-offset_top = 327.0
-offset_right = 158.0
-offset_bottom = 327.0
+offset_left = 146.0
+offset_top = 339.0
+offset_right = 146.0
+offset_bottom = 339.0
 
 [connection signal="pressed" from="back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="back" to="." method="_on_escape_pressed"]

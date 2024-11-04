@@ -1,6 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://dx36axs4f6l8p"]
+[gd_scene load_steps=8 format=3 uid="uid://dx36axs4f6l8p"]
 
 [ext_resource type="Script" path="res://menu/menu.gd" id="1_bsmd5"]
+[ext_resource type="Texture2D" uid="uid://dmuv1rxapnauw" path="res://menu/menu.jpg" id="2_6mgky"]
+[ext_resource type="Texture2D" uid="uid://cjaw81oflaynj" path="res://menu/1457913455371.jpeg" id="3_rdjyn"]
+
+[sub_resource type="Theme" id="Theme_pxfa1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rgd6x"]
+bg_color = Color(0, 0, 1, 1)
+border_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 17
+corner_radius_top_right = 10
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 30
+shadow_color = Color(0.645392, 0.645274, 1.54018e-06, 0.913725)
+shadow_size = 8
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cb5l2"]
+texture = ExtResource("3_rdjyn")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2t4qx"]
+bg_color = Color(0.971929, 0.00062801, 0.946598, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 20
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 20
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -11,22 +35,32 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bsmd5")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 600.0
+offset_bottom = 650.0
+texture = ExtResource("2_6mgky")
+
 [node name="escape" type="Button" parent="."]
 layout_mode = 2
-offset_left = 48.0
-offset_top = 612.0
-offset_right = 110.0
-offset_bottom = 643.0
+offset_left = 320.0
+offset_top = 599.0
+offset_right = 382.0
+offset_bottom = 630.0
 scale = Vector2(0.439999, 0.560001)
 text = "escape"
 
 [node name="enter" type="Button" parent="."]
 layout_mode = 2
-offset_left = 41.0
-offset_top = 165.0
-offset_right = 103.0
-offset_bottom = 196.0
-scale = Vector2(8.28, 6.78361)
+offset_left = 227.0
+offset_top = 477.0
+offset_right = 289.0
+offset_bottom = 508.0
+scale = Vector2(5.30996, 3.0783)
+theme = SubResource("Theme_pxfa1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rgd6x")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cb5l2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2t4qx")
 text = "enter"
 
 [connection signal="pressed" from="escape" to="." method="_on_escape_pressed"]

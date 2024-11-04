@@ -35,7 +35,8 @@ func death():
 	get_tree().change_scene_to_file("res://menu/deathMenu.tscn")
 
 func meds():
-	playerLife += 1
+	if playerLife < 3:
+		playerLife += 1
 
 func sproke():
 	playerSproking = true
