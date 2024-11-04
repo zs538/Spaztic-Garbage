@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://ys60asbb1nwo"]
+
+[ext_resource type="Script" path="res://menu/hud.gd" id="1_jtb0q"]
+[ext_resource type="PackedScene" uid="uid://dfq8nhptebyeh" path="res://menu/score.tscn" id="1_wvxot"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ctmpp"]
+font_color = Color(1, 0, 0, 1)
+outline_size = 3
+outline_color = Color(0, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_t5c31"]
+font_color = Color(1, 0, 1, 1)
+outline_size = 4
+outline_color = Color(1, 1, 0, 1)
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jtb0q")
+
+[node name="zivoty" type="Label" parent="."]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 530.0
+offset_right = 59.0
+offset_bottom = 553.0
+scale = Vector2(4.2, 1)
+text = "HP:"
+label_settings = SubResource("LabelSettings_ctmpp")
+
+[node name="speed" type="Label" parent="."]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 606.0
+offset_right = 59.0
+offset_bottom = 629.0
+scale = Vector2(2.08, 1)
+text = "speed:"
+label_settings = SubResource("LabelSettings_t5c31")
+
+[node name="score" parent="." instance=ExtResource("1_wvxot")]
+layout_mode = 1
+offset_left = 19.0
+offset_top = 530.0
+offset_right = 19.0
+offset_bottom = 530.0

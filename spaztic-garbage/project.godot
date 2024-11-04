@@ -21,6 +21,12 @@ patterns="*res://world/patterns.gd"
 worldValues="*res://world/worldValues.gd"
 spawn="*res://world/spawn.gd"
 
+[display]
+
+window/size/viewport_width=600
+window/size/viewport_height=650
+window/size/resizable=false
+
 [input]
 
 right={

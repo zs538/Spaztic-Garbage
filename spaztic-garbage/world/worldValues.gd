@@ -6,14 +6,32 @@ var playerDashing = false
 var playerSproking = false
 var playerInvincible = false
 var playerScore = 0
+var highScore = 0
 
 var enemyMewing = false
 
 @onready var playerBullet = preload("res://world/player-dir/playerBullet.tscn")
 @onready var playerRay = preload("res://world/player-dir/playerRay.tscn")
 
+var save_path = "user://highscore.txt"
+
+func save_score():
+	var file = FileAccess.open(save_path, FileAccess.WRITE)
+	file.store_string(str(highScore))
+	file = null
+
+func load_score():
+	if FileAccess.file_exists(save_path):
+		var file = FileAccess.open(save_path, FileAccess.READ)
+		highScore = int(file.get_as_text())
+		file = null
+	else:
+		highScore = 0
+
 func death():
-	
+	if playerScore > highScore:
+		highScore = playerScore
+		save_score()
 	get_tree().change_scene_to_file("res://menu/deathMenu.tscn")
 
 func meds():

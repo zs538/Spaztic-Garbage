@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://i4g1b1w0s8cy"]
+[gd_scene load_steps=3 format=3 uid="uid://i4g1b1w0s8cy"]
 
 [ext_resource type="Script" path="res://menu/death_menu.gd" id="1_87ymx"]
+[ext_resource type="PackedScene" uid="uid://dfq8nhptebyeh" path="res://menu/score.tscn" id="2_kco44"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -13,32 +14,39 @@ script = ExtResource("1_87ymx")
 
 [node name="back" type="Button" parent="."]
 layout_mode = 2
-offset_left = 616.0
-offset_top = 624.0
-offset_right = 684.0
-offset_bottom = 655.0
+offset_left = 122.0
+offset_top = 480.0
+offset_right = 190.0
+offset_bottom = 511.0
 scale = Vector2(0.439999, 0.560001)
 text = "go back"
 
 [node name="restard" type="Button" parent="."]
 layout_mode = 2
-offset_left = 243.0
-offset_top = -83.0
-offset_right = 367.0
-offset_bottom = -52.0
-scale = Vector2(8.28, 6.78361)
-text = "restardzfgdghs"
+offset_left = -2.99998
+offset_top = 54.0
+offset_right = 121.0
+offset_bottom = 85.0
+scale = Vector2(4.4, 6.78361)
+text = "restardzfgdghsghfghgfh"
 
-[node name="Label" type="Label" parent="."]
+[node name="hscore" type="Label" parent="."]
 layout_mode = 0
-offset_left = 294.0
-offset_top = 289.0
-offset_right = 317.0
-offset_bottom = 312.0
-scale = Vector2(1.6, 4.24)
-text = "score:"
+offset_left = 218.0
+offset_top = 184.0
+offset_right = 302.0
+offset_bottom = 207.0
+scale = Vector2(1, 7.92)
+text = "high score:"
 
-[connection signal="pressed" from="back" to="." method="_on_escape_pressed"]
+[node name="score" parent="." instance=ExtResource("2_kco44")]
+layout_mode = 1
+offset_left = 158.0
+offset_top = 327.0
+offset_right = 158.0
+offset_bottom = 327.0
+
 [connection signal="pressed" from="back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="back" to="." method="_on_escape_pressed"]
 [connection signal="pressed" from="restard" to="." method="_on_enter_pressed"]
 [connection signal="pressed" from="restard" to="." method="_on_restard_pressed"]
