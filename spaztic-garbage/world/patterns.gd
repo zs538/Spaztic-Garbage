@@ -30,6 +30,25 @@ var patterns = [
 			[MEDS,R],
 			[SPACE, M],
 			[MEWTARDR, L]
+		],
+		[
+			[FIRE, L],
+			[XIOTER, M],
+			[FIRE, M],
+			[SPROKE, R],
+			[MEWTARDL, R],
+			[FIRE, R]
+		],
+		[
+			[TARD, M],
+			[XIOTER, L],
+			[FIRE, L],
+			[MEWTARDL, M]
+		],
+		[
+			[XIOTER, R],
+			[MEWTARDL, R],
+			[FIRE, R]
 		]
 	]
 
