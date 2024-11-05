@@ -1,7 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://c38guxycmkjfd"]
+[gd_scene load_steps=9 format=3 uid="uid://c38guxycmkjfd"]
 
 [ext_resource type="Script" path="res://world/player-dir/player.gd" id="1_u5jos"]
 [ext_resource type="PackedScene" uid="uid://ys60asbb1nwo" path="res://menu/hud.tscn" id="2_byncr"]
+[ext_resource type="AudioStream" uid="uid://wffm0r20jiga" path="res://world/audio/dash.mp3" id="3_vuhpq"]
+[ext_resource type="AudioStream" uid="uid://3bptsl7kknqt" path="res://world/audio/gunshot.mp3" id="4_nlmtm"]
+[ext_resource type="AudioStream" uid="uid://c1w0n4ca4v6q8" path="res://world/audio/medss.mp3" id="5_lahcs"]
+[ext_resource type="AudioStream" uid="uid://duho7tgsrlo43" path="res://world/audio/sprokee.mp3" id="6_hekkk"]
+[ext_resource type="AudioStream" uid="uid://ckqn2id3mg7bs" path="res://world/audio/playerDamaged.mp3" id="7_x6c8b"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ntj71"]
 size = Vector3(0.5, 1, 0.1)
@@ -33,3 +38,19 @@ transform = Transform3D(0.834296, 0, 0, 0, -1.74227e-08, -0.834296, 0, 0.398586,
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource("2_byncr")]
+
+[node name="dashSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_vuhpq")
+
+[node name="shootSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_nlmtm")
+volume_db = -4.0
+
+[node name="medsSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_lahcs")
+
+[node name="sprokeSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_hekkk")
+
+[node name="damagedSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_x6c8b")

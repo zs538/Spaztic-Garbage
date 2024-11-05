@@ -34,9 +34,14 @@ func death():
 		save_score()
 	get_tree().change_scene_to_file("res://menu/deathMenu.tscn")
 
+var playerMedicating = false
+
 func meds():
 	if playerLife < 3:
 		playerLife += 1
+	playerMedicating = true
+	await get_tree().create_timer(0.1).timeout
+	playerMedicating = false
 
 func sproke():
 	playerSproking = true

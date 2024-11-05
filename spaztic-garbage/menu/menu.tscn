@@ -1,19 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://dx36axs4f6l8p"]
+[gd_scene load_steps=11 format=3 uid="uid://dx36axs4f6l8p"]
 
 [ext_resource type="Script" path="res://menu/menu.gd" id="1_bsmd5"]
 [ext_resource type="Texture2D" uid="uid://dmuv1rxapnauw" path="res://menu/menu.jpg" id="2_6mgky"]
 [ext_resource type="Texture2D" uid="uid://cjaw81oflaynj" path="res://menu/1457913455371.jpeg" id="3_rdjyn"]
+[ext_resource type="AudioStream" uid="uid://dvrboyl62fm1s" path="res://menu/audio/frank_ocean_nightcore_remix.mp3" id="4_oq7jh"]
 
 [sub_resource type="Theme" id="Theme_pxfa1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rgd6x"]
-bg_color = Color(0, 0, 1, 1)
+bg_color = Color(1, 0, 1, 1)
 border_color = Color(1, 0, 0, 1)
 corner_radius_top_left = 17
 corner_radius_top_right = 10
 corner_radius_bottom_right = 40
 corner_radius_bottom_left = 30
-shadow_color = Color(0.645392, 0.645274, 1.54018e-06, 0.913725)
+shadow_color = Color(0.63088, 0.000294368, 0.630875, 0.913725)
 shadow_size = 8
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cb5l2"]
@@ -21,10 +22,34 @@ texture = ExtResource("3_rdjyn")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2t4qx"]
 bg_color = Color(0.971929, 0.00062801, 0.946598, 1)
+border_width_left = 2
+border_width_right = 3
+border_color = Color(0.619087, 0.000282142, 0.619083, 1)
+border_blend = true
 corner_radius_top_left = 10
 corner_radius_top_right = 20
 corner_radius_bottom_right = 7
 corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yguq7"]
+bg_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color(0, 1, 0, 0.6)
+shadow_size = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3jehe"]
+bg_color = Color(0, 0, 1, 1)
+border_width_left = 7
+border_width_right = 7
+border_color = Color(1, 1, 0, 1)
+border_blend = true
+corner_radius_top_left = 40
+corner_radius_top_right = 10
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 40
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -63,5 +88,21 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_cb5l2")
 theme_override_styles/normal = SubResource("StyleBoxFlat_2t4qx")
 text = "enter"
 
+[node name="tuttoria" type="Button" parent="."]
+layout_mode = 0
+offset_left = 369.0
+offset_top = 546.0
+offset_right = 441.0
+offset_bottom = 577.0
+scale = Vector2(2.28, 2)
+theme_override_styles/hover = SubResource("StyleBoxFlat_yguq7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3jehe")
+text = "tutorial"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_oq7jh")
+autoplay = true
+
 [connection signal="pressed" from="escape" to="." method="_on_escape_pressed"]
 [connection signal="pressed" from="enter" to="." method="_on_enter_pressed"]
+[connection signal="pressed" from="tuttoria" to="." method="_on_tuttoria_pressed"]

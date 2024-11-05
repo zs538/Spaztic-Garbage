@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7ouapilbnq2e"]
+
+[ext_resource type="Script" path="res://menu/tutorial_menu.gd" id="1_0i3va"]
+[ext_resource type="Texture2D" uid="uid://bflxorthgil0m" path="res://menu/tutorial.jpeg" id="1_cvqwj"]
+
+[node name="tutorial-menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0i3va")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 600.0
+offset_bottom = 650.0
+texture = ExtResource("1_cvqwj")
+
+[node name="back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 559.0
+offset_right = 61.0
+offset_bottom = 590.0
+scale = Vector2(6.24, 2.64)
+text = "back"
+
+[node name="surrender" type="Button" parent="."]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 535.0
+offset_right = 518.0
+offset_bottom = 566.0
+text = "surrender
+"
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="surrender" to="." method="_on_surrender_pressed"]

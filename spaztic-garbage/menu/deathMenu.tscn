@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://i4g1b1w0s8cy"]
+[gd_scene load_steps=11 format=3 uid="uid://i4g1b1w0s8cy"]
 
 [ext_resource type="Script" path="res://menu/death_menu.gd" id="1_87ymx"]
 [ext_resource type="PackedScene" uid="uid://dfq8nhptebyeh" path="res://menu/score.tscn" id="2_kco44"]
 [ext_resource type="Texture2D" uid="uid://ba0n7mrk858p4" path="res://menu/icon.png" id="3_8q8fe"]
 [ext_resource type="Texture2D" uid="uid://dai48kyescdem" path="res://menu/deathmenu.jpeg" id="3_ew1ps"]
+[ext_resource type="AudioStream" uid="uid://dj3fyafrwydxv" path="res://menu/audio/jay-z_&_bionce_feat_kayne_west.mp3" id="5_w6tjo"]
 
 [sub_resource type="Theme" id="Theme_2uojh"]
 
@@ -89,6 +90,11 @@ offset_left = 336.0
 offset_top = 407.0
 offset_right = 336.0
 offset_bottom = 407.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_w6tjo")
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="back" to="." method="_on_escape_pressed"]

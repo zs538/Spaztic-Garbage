@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b3f227knlum46"]
+[gd_scene load_steps=8 format=3 uid="uid://b3f227knlum46"]
 
 [ext_resource type="PackedScene" uid="uid://cg308qpg3hh21" path="res://world/floor.tscn" id="1_8o2l0"]
 [ext_resource type="Script" path="res://world/main.gd" id="1_b0cs7"]
 [ext_resource type="PackedScene" uid="uid://c38guxycmkjfd" path="res://world/player-dir/player.tscn" id="2_q2rjj"]
+[ext_resource type="AudioStream" uid="uid://dwy6fuf2wwwjo" path="res://world/audio/angry_african_lady_remix_feat_niktendo_yodel_hidden_gabber_mix_prod_tom_york.mp3" id="4_6618a"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gf15s"]
 sky_top_color = Color(1, 0.917965, 0.903907, 1)
@@ -38,3 +39,9 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14.5, 
 
 [node name="player" parent="." instance=ExtResource("2_q2rjj")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.048877, 0, -0.067709)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_6618a")
+autoplay = true
+playback_type = 1
+parameters/looping = true

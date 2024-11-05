@@ -11,6 +11,8 @@ var gunCharged = true
 
 var canMove = true
 
+var sproked = false
+
 @onready var damageSensor = $CharacterBody3D/damageSensor
 @onready var bulletSensor = $CharacterBody3D/bulletSensor
 @onready var pickupSensor = $CharacterBody3D/pickupSensor
@@ -34,12 +36,14 @@ func _physics_process(delta: float) -> void:
 		if !holdsGun:
 			if dashCharged:
 				worldValues.dash()
+				$dashSFX.play()
 				dashCharged = false
 				await get_tree().create_timer(1.0).timeout
 				dashCharged = true
 		else:
 			if gunCharged:
 				worldValues.shootGun(playerPosittions[currPlayerPosIndex])
+				$shootSFX.play()
 				gunCharged = false
 				await get_tree().create_timer(1.0).timeout
 				gunCharged = true
@@ -56,17 +60,29 @@ func _physics_process(delta: float) -> void:
 			if damageSensor.get_collider() != null:
 				if damageSensor.get_collider().has_method("enemyGetDamaged"):
 					damageSensor.get_collider().enemyGetDamaged()
-		else: 
+		else:
 			worldValues.getDamaged()
-
+			$damagedSFX.play()
+	
 	if bulletSensor.is_colliding():
 		if bulletSensor.get_collider() != null:
 			if bulletSensor.get_collider().has_method("bulletDamage"):
 				bulletSensor.get_collider().bulletDamage()
-				
+				$damagedSFX.play()
+	
 	if pickupSensor.is_colliding():
 		if pickupSensor.get_collider() != null:
 			if pickupSensor.get_collider().has_method("pickupGetDamaged"):
 				pickupSensor.get_collider().pickupGetDamaged()
+	
+	if worldValues.playerSproking:
+		if !sproked:
+			$sprokeSFX.play()
+			sproked = true
+	else:
+		sproked = false
+	
+	if worldValues.playerMedicating:
+		$medsSFX.play()
 	
 	worldValues.addScore(1)
