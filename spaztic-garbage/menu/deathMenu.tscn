@@ -96,7 +96,7 @@ stream = ExtResource("5_w6tjo")
 autoplay = true
 parameters/looping = true
 
-[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="back" to="." method="_on_escape_pressed"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="restard" to="." method="_on_restard_pressed"]
 [connection signal="pressed" from="restard" to="." method="_on_enter_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c38guxycmkjfd"]
+[gd_scene load_steps=10 format=3 uid="uid://c38guxycmkjfd"]
 
 [ext_resource type="Script" path="res://world/player-dir/player.gd" id="1_u5jos"]
 [ext_resource type="PackedScene" uid="uid://ys60asbb1nwo" path="res://menu/hud.tscn" id="2_byncr"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://c1w0n4ca4v6q8" path="res://world/audio/medss.mp3" id="5_lahcs"]
 [ext_resource type="AudioStream" uid="uid://duho7tgsrlo43" path="res://world/audio/sprokee.mp3" id="6_hekkk"]
 [ext_resource type="AudioStream" uid="uid://ckqn2id3mg7bs" path="res://world/audio/playerDamaged.mp3" id="7_x6c8b"]
+[ext_resource type="AudioStream" uid="uid://dn4cq147usooi" path="res://world/audio/playerMove.mp3" id="8_hniie"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ntj71"]
 size = Vector3(0.5, 1, 0.1)
@@ -54,3 +55,7 @@ stream = ExtResource("6_hekkk")
 
 [node name="damagedSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_x6c8b")
+
+[node name="moveSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_hniie")
+volume_db = -4.771
