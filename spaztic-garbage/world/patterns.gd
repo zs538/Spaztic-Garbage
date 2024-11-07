@@ -24,7 +24,6 @@ var patterns = [
 		[
 			[TARD,M],
 			[SPROKE,L],
-			[SPACE, M],
 			[XIOTER,R],
 			[FIRE, M],
 			[MEDS,R],
@@ -35,7 +34,6 @@ var patterns = [
 			[FIRE, L],
 			[XIOTER, M],
 			[FIRE, M],
-			[SPROKE, R],
 			[MEWTARDL, R],
 			[FIRE, R]
 		],

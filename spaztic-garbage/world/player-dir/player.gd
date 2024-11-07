@@ -19,6 +19,9 @@ var sproked = false
 
 @export var stuff: Array[PackedScene] = []
 
+func rechargeDash():
+	dashCharged = true
+
 func playerGetDamaged():
 	worldValues.getDamaged()
 
@@ -27,10 +30,12 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("left"):
 		if currPlayerPosIndex > 0:
 			currPlayerPosIndex -= 1
+			$moveSFX.play()
 				
 	if Input.is_action_just_pressed("right"):
 		if currPlayerPosIndex < 2:
 			currPlayerPosIndex += 1
+			$moveSFX.play()
 				
 	if Input.is_action_just_pressed("attackAction"):
 		if !holdsGun:
