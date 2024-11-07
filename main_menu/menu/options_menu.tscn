@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://options_menu.gd" id="1_8pylu"]
 [ext_resource type="Texture2D" uid="uid://t3i8qdt1fs12" path="res://pics/Screen_CrueltySquad01-scaled-e1706813596326.webp" id="2_j5s6m"]
 
-[node name="Control" type="Control"]
+[node name="settings" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
