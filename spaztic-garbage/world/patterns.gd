@@ -6,10 +6,10 @@ var index = 0
 
 const SPACE = 0
 const FIRE = 1
-const TARD = 2
-const MEWTARDL = 3
-const MEWTARDR = 4
-const XIOTER = 5
+const SOY = 2
+const MLP = 3
+const MRP = 4
+const BURT = 5
 const BULLET = 6
 const FATASS = 7
 const SPROKE = 8
@@ -22,30 +22,64 @@ const M = 0
 
 var patterns = [
 		[
-			[TARD,M],
-			[SPROKE,L],
-			[XIOTER,R],
-			[FIRE, M],
-			[MEDS,R],
+			[SOY, L],
+			[BURT, M],
 			[SPACE, M],
-			[MEWTARDR, L]
-		],
-		[
-			[FIRE, L],
-			[XIOTER, M],
 			[FIRE, M],
-			[MEWTARDL, R],
+			[SPROKE, R],
+			[MLP, R],
 			[FIRE, R]
 		],
 		[
-			[TARD, M],
-			[XIOTER, L],
-			[FIRE, L],
-			[MEWTARDL, M]
+			[BURT, L],
+			[FIRE, R],
+			[MRP, L],
+			[SOY, R],
+			[FIRE, R],
+			[BURT, M],
+			[FIRE, M]
 		],
 		[
-			[XIOTER, R],
-			[MEWTARDL, R],
+			[MLP, M],
+			[FIRE, R],
+			[SOY, M],
+			[FIRE, L],
+			[MEDS, R],
+			[BURT, M],
+			[FIRE, R],
+			[SOY, R],
+			[SPACE, M]
+		],
+		[
+			[MRP, L],
+			[FIRE, R],
+			[SOY, M],
+			[FIRE, L],
+			[SPACE, M],
+			[SOY, M],
+			[FIRE, R],
+			[BURT, R],
+		],
+		[
+			[SOY, L],
+			[BURT, M],
+			[SPACE, M],
+			[FIRE, M],
+			[SPROKE, R],
+			[MLP, R],
+			[SOY, R],
+			[SPACE, M],
+			[BURT, M],
+			[FIRE, M]
+		],
+		[
+			[BURT, L],
+			[FIRE, R],
+			[MRP, L],
+			[SPROKE, M],
+			[FIRE, M],
+			[BURT, R],
+			[SOY, R],
 			[FIRE, R]
 		]
 	]

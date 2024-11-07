@@ -13,25 +13,9 @@ var enemyMewing = false
 @onready var playerBullet = preload("res://world/player-dir/playerBullet.tscn")
 @onready var playerRay = preload("res://world/player-dir/playerRay.tscn")
 
-var save_path = "user://highscore.txt"
-
-func save_score():
-	var file = FileAccess.open(save_path, FileAccess.WRITE)
-	file.store_string(str(highScore))
-	file = null
-
-func load_score():
-	if FileAccess.file_exists(save_path):
-		var file = FileAccess.open(save_path, FileAccess.READ)
-		highScore = int(file.get_as_text())
-		file = null
-	else:
-		highScore = 0
-
 func death():
 	if playerScore > highScore:
 		highScore = playerScore
-		save_score()
 	get_tree().change_scene_to_file("res://menu/deathMenu.tscn")
 
 var playerMedicating = false
@@ -79,9 +63,6 @@ func getDamaged():
 		playerLife -= 1
 		await get_tree().create_timer(0.2).timeout
 		playerInvincible = false
-		
-#func enemyGetDamaged(collidingEnemy):
-	#collidingEnemy.queue_free()
 
 var speedPoints = 0
 
@@ -92,7 +73,4 @@ func addScore(points):
 func _process(delta: float) -> void:
 	if speedPoints >= 1000:
 		worldSpeed += 0.2
-		speedPoints = 0
-	
-	if Input.is_action_just_pressed("reload"):
-		get_tree().change_scene_to_file("res://world/main.tscn")
+		speedPoints = 0 

@@ -43,7 +43,7 @@ func _physics_process(delta: float) -> void:
 				worldValues.dash()
 				$dashSFX.play()
 				dashCharged = false
-				await get_tree().create_timer(1.0).timeout
+				await get_tree().create_timer(0.85).timeout
 				dashCharged = true
 		else:
 			if gunCharged:
@@ -57,6 +57,9 @@ func _physics_process(delta: float) -> void:
 		holdsGun = true
 	else:
 		holdsGun = false
+	
+	if Input.is_action_just_pressed("back"):
+		worldValues.death()
 	
 	position.z = lerpf(position.z, playerPosittions[currPlayerPosIndex], delta*20)
 	

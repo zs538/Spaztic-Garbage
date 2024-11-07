@@ -8,29 +8,28 @@
 
 [sub_resource type="Theme" id="Theme_2uojh"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dmtex"]
-texture = ExtResource("3_ew1ps")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4m1v8"]
+bg_color = Color(0.6, 1, 0.6, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 20
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 40
+shadow_color = Color(1, 0, 0, 0.6)
+shadow_size = 20
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g2f05"]
-bg_color = Color(1, 0, 0, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(1, 1, 0, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 17
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c67q7"]
+texture = ExtResource("3_8q8fe")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kl0hc"]
-bg_color = Color(0, 0.670588, 0.780392, 0.258824)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
+bg_color = Color(1, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
 border_color = Color(0, 0, 0, 1)
 border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 20
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 5
 
 [sub_resource type="LabelSettings" id="LabelSettings_pd3yn"]
 outline_size = 2
@@ -54,9 +53,9 @@ texture = ExtResource("3_ew1ps")
 [node name="back" type="Button" parent="."]
 layout_mode = 2
 offset_left = 122.0
-offset_top = 480.0
+offset_top = 456.0
 offset_right = 190.0
-offset_bottom = 511.0
+offset_bottom = 530.0
 scale = Vector2(0.439999, 0.560001)
 text = "go back"
 
@@ -68,8 +67,8 @@ offset_right = 249.0
 offset_bottom = 520.0
 scale = Vector2(2.49793, 4.05604)
 theme = SubResource("Theme_2uojh")
-theme_override_styles/hover = SubResource("StyleBoxTexture_dmtex")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_g2f05")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4m1v8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_c67q7")
 theme_override_styles/normal = SubResource("StyleBoxFlat_kl0hc")
 text = "restardzfgdghsghfghgfh"
 icon = ExtResource("3_8q8fe")
@@ -96,7 +95,7 @@ stream = ExtResource("5_w6tjo")
 autoplay = true
 parameters/looping = true
 
-[connection signal="pressed" from="back" to="." method="_on_escape_pressed"]
 [connection signal="pressed" from="back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="back" to="." method="_on_escape_pressed"]
 [connection signal="pressed" from="restard" to="." method="_on_restard_pressed"]
 [connection signal="pressed" from="restard" to="." method="_on_enter_pressed"]
