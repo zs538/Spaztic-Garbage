@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://cvpnaacxueb7i"]
+[gd_scene load_steps=17 format=3 uid="uid://cvpnaacxueb7i"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_aav5r"]
 [ext_resource type="Texture2D" uid="uid://t3i8qdt1fs12" path="res://pics/Screen_CrueltySquad01-scaled-e1706813596326.webp" id="2_1cfas"]
+[ext_resource type="AudioStream" uid="uid://v7v54uidrsmg" path="res://music demo/Michael Jackson - Smooth Criminal (Single Version) HD.mp3" id="3_m314m"]
 
 [sub_resource type="Theme" id="Theme_5tbf8"]
 
@@ -186,6 +187,10 @@ z_index = 2
 layout_mode = 2
 theme = SubResource("Theme_3xm1w")
 text = "Exit"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_m314m")
+autoplay = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
